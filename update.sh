@@ -203,16 +203,16 @@ fix_mk_def_depends() {
     fi
 }
 
-add_wifi_default_set() {
-    local qualcommax_uci_dir="$BUILD_DIR/target/linux/qualcommax/base-files/etc/uci-defaults"
-    local filogic_uci_dir="$BUILD_DIR/target/linux/mediatek/filogic/base-files/etc/uci-defaults"
-    if [ -d "$qualcommax_uci_dir" ]; then
-        install -Dm755 "$BASE_PATH/patches/992_set-wifi-uci.sh" "$qualcommax_uci_dir/992_set-wifi-uci.sh"
-    fi
-    if [ -d "$filogic_uci_dir" ]; then
-        install -Dm755 "$BASE_PATH/patches/992_set-wifi-uci.sh" "$filogic_uci_dir/992_set-wifi-uci.sh"
-    fi
-}
+# add_wifi_default_set() {
+   # local qualcommax_uci_dir="$BUILD_DIR/target/linux/qualcommax/base-files/etc/uci-defaults"
+   # local filogic_uci_dir="$BUILD_DIR/target/linux/mediatek/filogic/base-files/etc/uci-defaults"
+  #  if [ -d "$qualcommax_uci_dir" ]; then
+     #   install -Dm755 "$BASE_PATH/patches/992_set-wifi-uci.sh" "$qualcommax_uci_dir/992_set-wifi-uci.sh"
+  #  fi
+  #  if [ -d "$filogic_uci_dir" ]; then
+  #      install -Dm755 "$BASE_PATH/patches/992_set-wifi-uci.sh" "$filogic_uci_dir/992_set-wifi-uci.sh"
+#    fi
+#}
 
 update_default_lan_addr() {
     local CFG_PATH="$BUILD_DIR/package/base-files/files/bin/config_generate"
