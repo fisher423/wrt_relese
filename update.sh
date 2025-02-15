@@ -504,12 +504,12 @@ main() {
     change_dnsmasq2full
     chk_fullconenat
     fix_mk_def_depends
-    add_wifi_default_set
+    # add_wifi_default_set
     update_default_lan_addr
     remove_something_nss_kmod
     remove_affinity_script
     fix_build_for_openssl
-    update_ath11k_fw
+    # update_ath11k_fw
     # fix_mkpkg_format_invalid
     chanage_cpuusage
     update_tcping
