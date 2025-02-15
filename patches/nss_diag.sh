@@ -26,7 +26,7 @@ nss_fw="/lib/firmware/qca*.bin"
 [ "$(ls $nss_fw 2> /dev/null)" ] && nss_version=$(grep -h -m 1 -a -o 'Version:.[^[:cntrl:]]*' $nss_fw | head -1 | cut -d ' ' -f 2)
 
 # ATH11K firmware version
-ath11k_fw=$(grep -hm1 -a -o 'WLAN.[^[:cntrl:]]*SILICONZ-1' /lib/firmware/*/q6* | head -1)
+#ath11k_fw=$(grep -hm1 -a -o 'WLAN.[^[:cntrl:]]*SILICONZ-1' /lib/firmware/*/q6* | head -1)
 
 # MAC80211 (backports) version
 mac80211_version=$(awk '/version/{print $NF;exit}' /lib/modules/*/compat.ko)
@@ -41,7 +41,7 @@ ipq_date=${IPQ_DATE:-"N/A"}
 openwrt_rev=${openwrt_rev:-"N/A"}
 model=${model:-"N/A"}
 nss_version=${nss_version:-"N/A"}
-ath11k_fw=${ath11k_fw:-"N/A"}
+#ath11k_fw=${ath11k_fw:-"N/A"}
 mac80211_version=${mac80211_version:-"N/A"}
 
 # Display the information
@@ -52,7 +52,7 @@ echo -e "${bold}${red}IPQ COMMIT${reset}: ${cyan}${ipq_commit}${reset}"
 echo -e "${bold}${red}  IPQ DATE${reset}: ${cyan}${ipq_date}${reset}"
 echo -e "${bold}${red}    NSS FW${reset}: ${magenta}${nss_version}${reset}"
 echo -e "${bold}${red}  MAC80211${reset}: ${yellow}${mac80211_version}${reset}"
-echo -e "${bold}${red} ATH11K FW${reset}: ${green}${ath11k_fw}${reset}"
+#echo -e "${bold}${red} ATH11K FW${reset}: ${green}${ath11k_fw}${reset}"
 
 # Display GRO Fragmentation status using BusyBox
 echo -ne "${bold}${red} INTERFACE${reset}: ${white}"
