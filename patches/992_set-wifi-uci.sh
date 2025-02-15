@@ -1,8 +1,8 @@
 #!/bin/sh
 
-board_name=$(cat /tmp/sysinfo/board_name)
+#board_name=$(cat /tmp/sysinfo/board_name)
 
-configure_wifi() {
+#configure_wifi() {
     local radio=$1
     local channel=$2
     local htmode=$3
@@ -33,10 +33,10 @@ set wireless.default_radio${radio}.wnm_sleep_mode_no_keys='1'
 EOF
 }
 
-jdc_ax1800_pro_wifi_cfg() {
-    configure_wifi 0 149 HE80 20 'Jdc_AX1800PRO_5G' '12345678'
-    configure_wifi 1 1 HE20 20 'Jdc_AX1800PRO' '12345678'
-}
+# jdc_ax1800_pro_wifi_cfg() {
+#    configure_wifi 0 149 HE80 20 'Jdc_AX1800PRO_5G' '12345678'
+ #   configure_wifi 1 1 HE20 20 'Jdc_AX1800PRO' '12345678'
+#}
 
 jdc_ax6600_wifi_cfg() {
     configure_wifi 0 149 HE80 22 'Jdc_AX6600_5G1' '12345678'
@@ -59,11 +59,11 @@ cmcc_rax3000m_wifi_cfg() {
     configure_wifi 1 44 HE160 25 'CMCC_RAX3000M_5G' '12345678'
 }
 
-case "${board_name}" in
-jdcloud,ax1800-pro | \
-    jdcloud,re-ss-01)
-    jdc_ax1800_pro_wifi_cfg
-    ;;
+#case "${board_name}" in
+#jdcloud,ax1800-pro | \
+#    jdcloud,re-ss-01)
+#    jdc_ax1800_pro_wifi_cfg
+ #   ;;
 jdcloud,ax6600 | \
     jdcloud,re-cs-02)
     jdc_ax6600_wifi_cfg
@@ -83,5 +83,5 @@ cmcc,rax3000m)
     ;;
 esac
 
-uci commit wireless
-/etc/init.d/network restart
+#uci commit wireless
+#/etc/init.d/network restart
