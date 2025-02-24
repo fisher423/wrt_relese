@@ -78,6 +78,9 @@ update_feeds() {
     ./scripts/feeds update -a
 }
 
+#!/bin/bash
+
+
 remove_unwanted_packages() {
     local luci_packages=(
         "luci-app-passwall" "luci-app-smartdns" "luci-app-ddns-go" "luci-app-rclone"
@@ -87,13 +90,14 @@ remove_unwanted_packages() {
     local packages_net=(
         "xray-core" "xray-plugin" "dns2socks" "alist" "hysteria"
         "smartdns" "mosdns" "adguardhome" "ddns-go" "naiveproxy" "shadowsocks-rust"
-        "sing-box" "v2ray-core" "v2ray-geodata" "v2ray-plugin" "tuic-client"
+        "sing-box" "v2ray-core" "v2ray-geodata" "v2ray-plugin" "tuic-client" "fullconenat"
         "chinadns-ng" "ipt2socks" "tcping" "trojan-plus" "simple-obfs"
-        "shadowsocksr-libev" "dae" "daed" "mihomo" "geoview"
+        "shadowsocksr-libev" "dae" "daed" "mihomo" "geoview" 
     )
     local small8_packages=(
-        "ppp" "firewall" "dae" "daed" "daed-next" "libnftnl" "nftables" "dnsmasq"
-    )
+        "ppp" "firewall*" "dae" "daed" "daed-next" "libnftnl" "nftables" "dnsmasq" "base-files" "opkg" "ucl" "upx" "vsftpd*" "miniupnpd-iptables"
+        "wireless-regdb"        
+        )
 
     for pkg in "${luci_packages[@]}"; do
         \rm -rf ./feeds/luci/applications/$pkg
