@@ -37,6 +37,8 @@ cd wrt_relese
   
 编译X64:  
 ./build.sh x64_immwrt  
+
+./build.sh fine3399_lede
   
 三方插件源自：https://github.com/kenzok8/small-package.git  
   
