@@ -127,7 +127,7 @@ update_golang() {
 }
 
 install_small8() {
-    ./scripts/feeds install -p small8 -f xray-core xray-plugin dns2tcp dns2socks haproxy hysteria \
+    ./scripts/feeds install -p small8 -f xray-core xray-plugin dns2tcp dns2socks  hysteria \
         naiveproxy shadowsocks-rust sing-box v2ray-core v2ray-geodata v2ray-geoview v2ray-plugin \
         tuic-client chinadns-ng ipt2socks tcping trojan-plus simple-obfs shadowsocksr-libev \
         luci-app-passwall alist luci-app-alist smartdns luci-app-smartdns v2dat mosdns luci-app-mosdns \
@@ -387,15 +387,15 @@ add_wg_chk() {
 }
 
 update_pw_ha_chk() {
-    local new_path="$BASE_PATH/patches/haproxy_check.sh"
+   # local new_path="$BASE_PATH/patches/haproxy_check.sh"
     local pw_share_dir="$BUILD_DIR/feeds/small8/luci-app-passwall/root/usr/share/passwall"
-    local pw_ha_path="$pw_share_dir/haproxy_check.sh"
-    local ha_lua_path="$pw_share_dir/haproxy.lua"
+  #  local pw_ha_path="$pw_share_dir/haproxy_check.sh"
+ #   local ha_lua_path="$pw_share_dir/haproxy.lua"
     local smartdns_lua_path="$pw_share_dir/helper_smartdns_add.lua"
     local rules_dir="$pw_share_dir/rules"
 
     # 修改 haproxy.lua 文件中的 rise 和 fall 参数
-    [ -f "$ha_lua_path" ] && sed -i 's/rise 1 fall 3/rise 3 fall 2/g' "$ha_lua_path"
+  #  [ -f "$ha_lua_path" ] && sed -i 's/rise 1 fall 3/rise 3 fall 2/g' "$ha_lua_path"
 
     # 删除 helper_smartdns_add.lua 文件中的特定行
     [ -f "$smartdns_lua_path" ] && sed -i '/force-qtype-SOA 65/d' "$smartdns_lua_path"
