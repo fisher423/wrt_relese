@@ -37,6 +37,10 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  
+#CI权限
+permissions: write-all
+
 jobs:
   build:
     runs-on: ${{ inputs.runs-on }}
