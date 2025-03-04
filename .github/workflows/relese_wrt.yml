@@ -130,7 +130,7 @@ jobs:
           echo "=============================================="
 
       - name: Package OpenWrt Firmware
-        if: ${{ inputs.model == 'n1_immmwrt' }}
+        if: ${{ inputs.model == 'fine3399_lede' }}
         uses: unifreq/openwrt_packit@master
         env:
           OPENWRT_ARMVIRT: firmware/*.tar.gz
