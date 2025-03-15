@@ -187,14 +187,8 @@ change_dnsmasq2full() {
     fi
 }
 
-chk_fullconenat() {
-    if [ ! -d $BUILD_DIR/package/network/utils/fullconenat-nft ]; then
-        \cp -rf $BASE_PATH/fullconenat/fullconenat-nft $BUILD_DIR/package/network/utils
-    fi
-    if [ ! -d $BUILD_DIR/package/network/utils/fullconenat ]; then
-        \cp -rf $BASE_PATH/fullconenat/fullconenat $BUILD_DIR/package/network/utils
-    fi
-}
+
+
 
 fix_mk_def_depends() {
     sed -i 's/libustream-mbedtls/libustream-openssl/g' $BUILD_DIR/include/target.mk 2>/dev/null
