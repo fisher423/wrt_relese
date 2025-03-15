@@ -584,7 +584,6 @@ main() {
     fix_miniupmpd
     update_golang
     change_dnsmasq2full
-    chk_fullconenat
     fix_mk_def_depends
     add_wifi_default_set
     update_default_lan_addr
