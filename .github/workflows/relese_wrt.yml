@@ -130,11 +130,11 @@ jobs:
           echo "=============================================="
 
       - name: Package OpenWrt Firmware
-        if: ${{ inputs.model == 'fine3399_lede' }}
+        if: ${{ inputs.model == 'n1_immwrt' }}
         uses: unifreq/openwrt_packit@master
         env:
           OPENWRT_ARMVIRT: firmware/*.tar.gz
-          PACKAGE_SOC: rk3399
+          PACKAGE_SOC: s905d
           KERNEL_VERSION_NAME: 6.6.y
           WHOAMI: ZqinKing
 
