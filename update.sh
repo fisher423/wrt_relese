@@ -339,22 +339,22 @@ add_ax6600_led() {
     chmod +x "$athena_led_dir/root/etc/init.d/athena_led"
 }
 
-chanage_cpuusage() {
-    local luci_dir="$BUILD_DIR/feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/luci"
-    local imm_script1="$BUILD_DIR/package/base-files/files/sbin/cpuusage"
+# chanage_cpuusage() {
+#    local luci_dir="$BUILD_DIR/feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/luci"
+#    local imm_script1="$BUILD_DIR/package/base-files/files/sbin/cpuusage"
 
-    if [ -f $luci_dir ]; then
-        sed -i "s#const fd = popen('top -n1 | awk \\\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\\'')#const cpuUsageCommand = access('/sbin/cpuusage') ? '/sbin/cpuusage' : 'top -n1 | awk \\\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\\''#g" $luci_dir
-        sed -i '/cpuUsageCommand/a \\t\t\tconst fd = popen(cpuUsageCommand);' $luci_dir
-    fi
+#    if [ -f $luci_dir ]; then
+#        sed -i "s#const fd = popen('top -n1 | awk \\\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\\'')#const cpuUsageCommand = access('/sbin/cpuusage') ? '/sbin/cpuusage' : 'top -n1 | awk \\\'/^CPU/ {printf(\"%d%\", 100 - \$8)}\\\''#g" $luci_dir
+#        sed -i '/cpuUsageCommand/a \\t\t\tconst fd = popen(cpuUsageCommand);' $luci_dir
+#    fi
 
-    if [ -f "$imm_script1" ]; then
-        rm -f "$imm_script1"
-    fi
+#    if [ -f "$imm_script1" ]; then
+#        rm -f "$imm_script1"
+#    fi
 
-    install -Dm755 "$BASE_PATH/patches/cpuusage" "$BUILD_DIR/target/linux/qualcommax/base-files/sbin/cpuusage"
-    install -Dm755 "$BASE_PATH/patches/hnatusage" "$BUILD_DIR/target/linux/mediatek/filogic/base-files/sbin/cpuusage"
-}
+#    install -Dm755 "$BASE_PATH/patches/cpuusage" "$BUILD_DIR/target/linux/qualcommax/base-files/sbin/cpuusage"
+#    install -Dm755 "$BASE_PATH/patches/hnatusage" "$BUILD_DIR/target/linux/mediatek/filogic/base-files/sbin/cpuusage"
+#}
 
 update_tcping() {
     local tcping_path="$BUILD_DIR/feeds/small8/tcping/Makefile"
