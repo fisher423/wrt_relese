@@ -209,7 +209,7 @@ change_dnsmasq2full() {
 }
 
 # acc
-cd owrt
+cd wrt_relese/owrt
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 install_fullconenat() {
