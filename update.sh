@@ -208,9 +208,6 @@ change_dnsmasq2full() {
     fi
 }
 
-# acc
-cd wrt_relese/owrt
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 install_fullconenat() {
     if [ ! -d $BUILD_DIR/package/network/utils/fullconenat-nft ]; then
