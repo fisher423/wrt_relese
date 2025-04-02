@@ -4,7 +4,6 @@ set -e
 set -o errexit
 set -o errtrace
 
-git checkout 53661b6a154c17f3d52553decd160239be8a2808
 
 # 定义错误处理函数
 error_handler() {
