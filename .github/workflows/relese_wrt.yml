@@ -11,6 +11,7 @@ on:
         default: fine3399_lede
         options:
           - fine3399_lede
+          - fine3399_ledel
           - fine3399_owrt
           - aliyun_ap8220_immwrt
           - cmcc_rax3000m_immwrt
