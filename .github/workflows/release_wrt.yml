@@ -8,7 +8,7 @@ on:
         required: true
         description: Device Model
         type: choice
-        default: fine3399_lede
+        default: fine3399_owrt
         options:
           - aliyun_ap8220_immwrt
           - cmcc_rax3000m_immwrt
@@ -16,6 +16,7 @@ on:
           - jdcloud_ipq60xx_immwrt
           - jdcloud_ipq60xx_libwrt
           - fine3399_lede
+          - fine3399_owrt
           - redmi_ax5_immwrt
           - redmi_ax6_immwrt
           - redmi_ax6_libwrt
