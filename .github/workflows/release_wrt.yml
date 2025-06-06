@@ -8,8 +8,9 @@ on:
         required: true
         description: Device Model
         type: choice
-        default: jdcloud_ipq60xx_immwrt
+        default: fine3399_immwrt
         options:
+          - fine3399_immwrt
           - aliyun_ap8220_immwrt
           - cmcc_rax3000m_immwrt
           - jdcloud_ax6000_immwrt
